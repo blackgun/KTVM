@@ -3,9 +3,11 @@ import json
 import requests
 import time
 import sys
+from dotenv import load_dotenv
 
 # --- Configuration & Credentials ---
-# In a real app, use a .env or config file. For now, we check environment.
+# Load environment variables from .env file
+load_dotenv(dotenv_path="ktvm/.env")
 VULTR_API_KEY = os.environ.get("VULTR_API_KEY")
 DATA_FILE = "ktvm/vps_data.json"
 
