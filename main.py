@@ -50,7 +50,7 @@ def main():
     selected_vps = None
 
     while True:
-        clear_screen()
+        # clear_screen()
         if state == "MAIN":
             render_main_menu(vps_list)
             choice = input("\n选择 ID 或动作 > ").strip().upper()
