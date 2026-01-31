@@ -24,25 +24,24 @@ def clear_screen():
 def render_main_menu(vps_list):
     print("\n[XFF 控制台]")
     print("-" * 55)
-    print(f"{'ID':<3} {'名称':<12} {'地点':<6} {'IP':<15} {'VPN':<12} {'OpenClaw'}")
+    print(f"{'ID':<3} {'名称':<12} {'地点':<6} {'IP':<15} {'VPN(Outline)':<15} {'OpenClaw'}")
     for v in vps_list:
         vpn_status = "● 运行" if v['vpn'] else "○ 停止"
         claw_status = "● 活跃" if v['claw'] else "○ 离线"
-        print(f"{v['id']:<3} {v['name']:<12} {v['loc']:<6} {v['ip']:<15} {vpn_status:<12} {claw_status}")
+        print(f"{v['id']:<3} {v['name']:<12} {v['loc']:<6} {v['ip']:<15} {vpn_status:<15} {claw_status}")
     print("-" * 55)
     print("[0] 返回  [N] 新增服务器  [H] 帮助")
 
 def render_detail_menu(vps):
-    print(f"\n服务器 {vps['id']} 详情 ({vps['name']})")
-    print("-" * 40)
-    # ✓ for True, ✘ for False
+    print(f"\n服务器{vps['id']}详情")
+    # Checkmarks
     s1 = "✓" if vps['vpn'] else "✘"
     s2 = "✓" if vps['claw'] else "✘"
     s3 = "✓" if vps['page'] else "✘"
     
-    print(f"1.VPN {s1}    2.AI {s2}    3.Page {s3}")
+    print(f"1.VPN{s1}  2.AI{s2}  3.Page{s3}")
     print("-" * 40)
-    print("[0] 返回  [1-3] 选择安装")
+    print("[0] 返回  [0-N]选择安装(无卸载)")
 
 # --- Main Logic ---
 def main():
